@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Bus.Abstractions\ProjectName.Shared.Bus.Abstractions.csproj" />
+    <ProjectReference Include="..\ProjectName.DomainName.Application\ProjectName.DomainName.Application.csproj" />
+    <ProjectReference Include="..\ProjectName.DomainName.Domain\ProjectName.DomainName.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

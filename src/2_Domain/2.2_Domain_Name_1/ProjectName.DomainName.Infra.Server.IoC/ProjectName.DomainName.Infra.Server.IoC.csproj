@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="2.1.4" />
+    <PackageReference Include="microsoft.extensions.dependencyinjection.abstractions" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Bus.Core\ProjectName.Shared.Bus.Core.csproj" />
+    <ProjectReference Include="..\ProjectName.DomainName.Application\ProjectName.DomainName.Application.csproj" />
+    <ProjectReference Include="..\ProjectName.DomainName.Handlers\ProjectName.DomainName.Handlers.csproj" />
+    <ProjectReference Include="..\ProjectName.DomainName.Infra.Server.Data\ProjectName.DomainName.Infra.Server.Data.csproj" />
+  </ItemGroup>
+
+</Project>

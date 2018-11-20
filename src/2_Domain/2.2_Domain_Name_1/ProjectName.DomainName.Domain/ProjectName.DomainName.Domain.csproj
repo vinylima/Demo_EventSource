@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Specifications\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Abstractions.Data\ProjectName.Shared.Abstractions.Data.csproj" />
+    <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Abstractions.Domain\ProjectName.Shared.Abstractions.Domain.csproj" />
+    <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Kernel.Core\ProjectName.Shared.Kernel.Core.csproj" />
+  </ItemGroup>
+
+</Project>

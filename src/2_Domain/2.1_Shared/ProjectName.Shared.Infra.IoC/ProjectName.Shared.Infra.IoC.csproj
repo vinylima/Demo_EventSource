@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="mediatr" Version="5.1.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="5.1.0" />
+    <PackageReference Include="microsoft.extensions.dependencyinjection" Version="2.1.1" />
+    <PackageReference Include="microsoft.extensions.dependencyinjection.abstractions" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectName.Shared.Bus.Core\ProjectName.Shared.Bus.Core.csproj" />
+    <ProjectReference Include="..\ProjectName.Shared.Kernel.Core\ProjectName.Shared.Kernel.Core.csproj" />
+  </ItemGroup>
+
+</Project>

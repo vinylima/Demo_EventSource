@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="2.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Abstractions.Data\ProjectName.Shared.Abstractions.Data.csproj" />
+    <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Abstractions.Domain\ProjectName.Shared.Abstractions.Domain.csproj" />
+    <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Kernel.Core\ProjectName.Shared.Kernel.Core.csproj" />
+    <ProjectReference Include="..\ProjectName.DomainName.Domain\ProjectName.DomainName.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
