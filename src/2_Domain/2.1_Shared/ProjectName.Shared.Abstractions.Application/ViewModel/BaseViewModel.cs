@@ -4,11 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-using ProjectName.Shared.Bus.Abstractions.ValueObjects;
-
 namespace ProjectName.Shared.Abstractions.Application
 {
-    public abstract class BaseViewModel<TViewModel> : Command, IBaseViewModel where TViewModel : IViewModel
+    public abstract class BaseViewModel<TViewModel> : IBaseViewModel where TViewModel : IViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

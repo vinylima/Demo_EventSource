@@ -10,6 +10,8 @@ using ProjectName.Shared.Bus.Abstractions.ValueObjects;
 using ProjectName.Shared.Bus.Core;
 using ProjectName.Shared.Bus.Core.Handlers;
 using ProjectName.Shared.Bus.Core.Store;
+using ProjectName.Shared.Infra.Server.Data.EventSourcing;
+using ProjectName.Shared.Infra.Server.Data.Repositories;
 
 namespace ProjectName.Shared.Infra.IoC
 {
@@ -17,18 +19,29 @@ namespace ProjectName.Shared.Infra.IoC
     {
         public static void AddServiceBusModule<TStartup>(this IServiceCollection services)
         {
-            services.AddScoped<List<Notification>>();
-            services.AddScoped<List<Warning>>();
-            services.AddScoped<List<SystemError>>();
+            // Add Mediator
 
             services.AddMediatR(typeof(TStartup).GetTypeInfo().Assembly);
 
+
             // Add Service Bus Core Service
+
             services.AddScoped<IServiceBus, ServiceBus>();
 
+
+            // Add Event Sourcing
+
+            services.AddSingleton<IEventStore, EventStore>();
+            services.AddScoped<IEventStoreRepository, EventStoreRepository>();
+            
+
             // Add Notification Store of Domain Notifications, Warnings and System Errors.
+
             services.AddScoped<INotificationStore, NotificationStore>();
             services.AddScoped<INotificationHandler<Notification>, NotificationHandler>();
+            services.AddScoped<List<Notification>>();
+            services.AddScoped<List<Warning>>();
+            services.AddScoped<List<SystemError>>();
         }
     }
 }

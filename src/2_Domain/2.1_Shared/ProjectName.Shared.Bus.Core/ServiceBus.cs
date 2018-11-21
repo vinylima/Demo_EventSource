@@ -5,22 +5,44 @@ using System.Threading.Tasks;
 using MediatR;
 
 using ProjectName.Shared.Bus.Abstractions;
-using ProjectName.Shared.Bus.Abstractions.ValueObjects;
+using ProjectName.Shared.Bus.Abstractions.Enums;
 
 namespace ProjectName.Shared.Bus.Core
 {
     public class ServiceBus : IServiceBus
     {
         private readonly IMediator _mediator;
+        private readonly IEventStore eventStore;
 
-        public ServiceBus(IMediator mediator)
+        public ServiceBus(IServiceProvider serviceProvider)
         {
-            this._mediator = mediator;
+            this._mediator = serviceProvider.GetService<IMediator>();
+            this.eventStore = serviceProvider.GetService<IEventStore>();
         }
 
         public async Task PublishEvent(IEvent @event)
         {
+            Task eventRunning;
+
+            if (@event.EventType != EventType.Domain_Notification)
+                await this.eventStore.Store(@event);
+
             await this._mediator.Publish(@event);
+
+            /*
+            if (@event.EventType != EventType.Domain_Notification)
+                await this.eventStore.Queue(this.eventStore.Store(@event));
+
+            if(@event.EventType == EventType.Address_Saved)
+                await this._mediator.Publish(@event);
+
+            eventRunning = this._mediator.Publish(@event);
+
+            if (@event.ExecutionMode == EventExecutionMode.WaitToClose)
+                await eventRunning;
+            else
+                await this.eventStore.Queue(eventRunning);
+            */
         }
         
         public async Task SendCommand(ICommand command)
@@ -37,6 +59,8 @@ namespace ProjectName.Shared.Bus.Core
 
         public void Dispose()
         {
+            this.eventStore.Dispose();
+
             GC.SuppressFinalize(this);
         }
     }

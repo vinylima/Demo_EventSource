@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 using ProjectName.DomainName.Application.Commands.AddressCommands;
-using ProjectName.DomainName.Application.ViewModels;
 using ProjectName.DomainName.Domain.Interfaces.Repository;
-using ProjectName.Shared.Bus.Abstractions;
+using ProjectName.Shared.Bus.Abstractions.ValueObjects;
 
 namespace ProjectName.Web.API.Controllers
 {
@@ -25,9 +24,9 @@ namespace ProjectName.Web.API.Controllers
         [Route("api/Handler")]
         public async Task<IActionResult> Index()
         {
-            var addresses = await this._addressReadRepository.GetAllAsync();
+            await this.ServiceBus.PublishEvent(new Notification("Key", "Value"));
 
-            return Response(addresses);
+            return Response();
         }
 
         // POST api/Service/Save
@@ -39,7 +38,6 @@ namespace ProjectName.Web.API.Controllers
 
             return Response();
         }
-
 
         [HttpGet]
         [Route("api/Handler/Search")]

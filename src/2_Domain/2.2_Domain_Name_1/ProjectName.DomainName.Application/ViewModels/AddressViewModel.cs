@@ -7,7 +7,7 @@ namespace ProjectName.DomainName.Application.ViewModels
 {
     public class AddressViewModel : BaseViewModel<AddressViewModel>, IViewModel
     {
-        public Guid AddressId { get { return this.AggregateId; } set { this.AggregateId = value; } }
+        public Guid AddressId { get; set; }
         public string Street { get; set; }
         public CityViewModel City { get; set; }
     }

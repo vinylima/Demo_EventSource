@@ -14,7 +14,7 @@ namespace ProjectName.Shared.Bus.Abstractions.ValueObjects
         #region Constructors
 
         public Notification(Guid eventId, string code, string value, NotificationType notificationType)
-            : base(eventId, EventType.Domain_Notification)
+            : base(eventId, EventType.Domain_Notification, EventExecutionMode.WaitToClose, EventStoreMode.InMemory)
         {
             this.Code = code;
             this.Value = value;
@@ -22,7 +22,7 @@ namespace ProjectName.Shared.Bus.Abstractions.ValueObjects
         }
 
         public Notification(string code, string value, NotificationType notificationType)
-            : base(EventType.Domain_Notification)
+            : base(EventType.Domain_Notification, EventExecutionMode.WaitToClose, EventStoreMode.InMemory)
         {
             this.Code = code;
             this.Value = value;
@@ -30,7 +30,7 @@ namespace ProjectName.Shared.Bus.Abstractions.ValueObjects
         }
 
         public Notification(string value, NotificationType notificationType)
-            : base(EventType.Domain_Notification)
+            : base(EventType.Domain_Notification, EventExecutionMode.WaitToClose, EventStoreMode.InMemory)
         {
             this.Code = "";
             this.Value = value;
@@ -38,7 +38,7 @@ namespace ProjectName.Shared.Bus.Abstractions.ValueObjects
         }
 
         public Notification(string code, string value)
-            : base(EventType.Domain_Notification)
+            : base(EventType.Domain_Notification, EventExecutionMode.WaitToClose, EventStoreMode.InMemory)
         {
             this.Code = code;
             this.Value = value;

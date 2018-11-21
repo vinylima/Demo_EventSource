@@ -1,8 +1,6 @@
 ﻿
 using System;
 
-using MediatR;
-
 namespace ProjectName.Shared.Bus.Abstractions.ValueObjects
 {
     public abstract class Command : ICommand

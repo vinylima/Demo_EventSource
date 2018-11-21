@@ -45,11 +45,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{70EEF3
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectName.Shared.Infra.IoC", "src\2_Domain\2.1_Shared\ProjectName.Shared.Infra.IoC\ProjectName.Shared.Infra.IoC.csproj", "{EF292174-66A0-438C-A6A6-09885C7E75E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectName.Shared.Abstractions.Application", "src\2_Domain\2.1_Shared\ProjectName.Shared.Abstractions.Application\ProjectName.Shared.Abstractions.Application.csproj", "{B150094B-9D8A-435B-9DEB-68789DEE634C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectName.Shared.Abstractions.Application", "src\2_Domain\2.1_Shared\ProjectName.Shared.Abstractions.Application\ProjectName.Shared.Abstractions.Application.csproj", "{B150094B-9D8A-435B-9DEB-68789DEE634C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectName.Shared.Abstractions.Domain", "src\2_Domain\2.1_Shared\ProjectName.Shared.Abstractions.Domain\ProjectName.Shared.Abstractions.Domain.csproj", "{BB9077B6-1E0F-4340-AE5F-A4CC505E86E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectName.Shared.Abstractions.Domain", "src\2_Domain\2.1_Shared\ProjectName.Shared.Abstractions.Domain\ProjectName.Shared.Abstractions.Domain.csproj", "{BB9077B6-1E0F-4340-AE5F-A4CC505E86E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectName.Shared.Abstractions.Data", "src\2_Domain\2.1_Shared\ProjectName.Shared.Abstractions.Data\ProjectName.Shared.Abstractions.Data.csproj", "{C248E76E-D620-46A2-8FBF-307FB4BFF000}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectName.Shared.Abstractions.Data", "src\2_Domain\2.1_Shared\ProjectName.Shared.Abstractions.Data\ProjectName.Shared.Abstractions.Data.csproj", "{C248E76E-D620-46A2-8FBF-307FB4BFF000}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{F1493B56-994C-41EF-BF8A-9E261AC6D20E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectName.Shared.Infra.Server.Data", "src\2_Domain\2.1_Shared\ProjectName.Shared.Infra.Server.Data\ProjectName.Shared.Infra.Server.Data.csproj", "{C7BAFC66-ABA1-4F69-ABF1-901D82B29E22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +113,10 @@ Global
 		{C248E76E-D620-46A2-8FBF-307FB4BFF000}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C248E76E-D620-46A2-8FBF-307FB4BFF000}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C248E76E-D620-46A2-8FBF-307FB4BFF000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7BAFC66-ABA1-4F69-ABF1-901D82B29E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7BAFC66-ABA1-4F69-ABF1-901D82B29E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7BAFC66-ABA1-4F69-ABF1-901D82B29E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7BAFC66-ABA1-4F69-ABF1-901D82B29E22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -132,10 +140,12 @@ Global
 		{BC7943F2-DF42-4B54-BD9E-B4ADB2E6DFDE} = {DDB12EBF-78A7-4922-9114-C771CC427AF3}
 		{DDB12EBF-78A7-4922-9114-C771CC427AF3} = {77082FAF-73A3-4415-92DF-4EB12722DEA5}
 		{70EEF3A3-7861-4459-AEFD-386EF142F926} = {77082FAF-73A3-4415-92DF-4EB12722DEA5}
-		{EF292174-66A0-438C-A6A6-09885C7E75E8} = {77082FAF-73A3-4415-92DF-4EB12722DEA5}
+		{EF292174-66A0-438C-A6A6-09885C7E75E8} = {F1493B56-994C-41EF-BF8A-9E261AC6D20E}
 		{B150094B-9D8A-435B-9DEB-68789DEE634C} = {70EEF3A3-7861-4459-AEFD-386EF142F926}
 		{BB9077B6-1E0F-4340-AE5F-A4CC505E86E4} = {70EEF3A3-7861-4459-AEFD-386EF142F926}
 		{C248E76E-D620-46A2-8FBF-307FB4BFF000} = {70EEF3A3-7861-4459-AEFD-386EF142F926}
+		{F1493B56-994C-41EF-BF8A-9E261AC6D20E} = {77082FAF-73A3-4415-92DF-4EB12722DEA5}
+		{C7BAFC66-ABA1-4F69-ABF1-901D82B29E22} = {F1493B56-994C-41EF-BF8A-9E261AC6D20E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E87935F-F5FB-4A16-AC5D-1074E9A430F2}

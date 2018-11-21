@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProjectName.Shared.Bus.Core\ProjectName.Shared.Bus.Core.csproj" />
+    <ProjectReference Include="..\ProjectName.Shared.Infra.Server.Data\ProjectName.Shared.Infra.Server.Data.csproj" />
     <ProjectReference Include="..\ProjectName.Shared.Kernel.Core\ProjectName.Shared.Kernel.Core.csproj" />
   </ItemGroup>
 

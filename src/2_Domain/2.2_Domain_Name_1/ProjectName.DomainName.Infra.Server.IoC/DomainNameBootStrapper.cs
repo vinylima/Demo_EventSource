@@ -6,9 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using MediatR;
 
 using ProjectName.DomainName.Application.Commands.AddressCommands;
+using ProjectName.DomainName.Application.Events.AddressesEvents;
 using ProjectName.DomainName.Application.ViewModels;
 using ProjectName.DomainName.Domain.Interfaces.Repository;
 using ProjectName.DomainName.Handlers.Addresses;
+using ProjectName.DomainName.Handlers.Events.AddressesEvents;
 using ProjectName.DomainName.Infra.Server.Data.Context;
 using ProjectName.DomainName.Infra.Server.Data.Repositories;
 
@@ -32,10 +34,15 @@ namespace ProjectName.DomainName.Infra.Server.IoC
             services.AddScoped<IAddressReadRepository, AddressRepository>();
 
 
-            // Handlers
+            // Commands
 
             services.AddScoped<IRequestHandler<SaveAddressCommand, bool>, SaveAddressCommandHandler>();
             services.AddScoped<IRequestHandler<SearchAddressCommand, AddressViewModel>, SearchAddressCommandHandler>();
+
+
+            // Events
+
+            services.AddScoped<INotificationHandler<AddressSavedEvent>, AddressSavedEventHandler>();
         }
     }
 }
