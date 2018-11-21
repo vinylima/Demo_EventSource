@@ -11,7 +11,7 @@ namespace ProjectName.DomainName.Handlers.Events.AddressesEvents
     {
         public Task Handle(AddressSavedEvent notification, CancellationToken cancellationToken)
         {
-            Thread.Sleep(new System.TimeSpan(0, 0, 30));
+            Thread.Sleep(new System.TimeSpan(0, 2, 0));
 
             return Task.CompletedTask;
         }

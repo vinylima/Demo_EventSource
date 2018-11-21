@@ -23,26 +23,16 @@ namespace ProjectName.Shared.Bus.Core
         public async Task PublishEvent(IEvent @event)
         {
             Task eventRunning;
-
-            if (@event.EventType != EventType.Domain_Notification)
-                await this.eventStore.Store(@event);
-
-            await this._mediator.Publish(@event);
-
-            /*
+            
             if (@event.EventType != EventType.Domain_Notification)
                 await this.eventStore.Queue(this.eventStore.Store(@event));
-
-            if(@event.EventType == EventType.Address_Saved)
-                await this._mediator.Publish(@event);
-
-            eventRunning = this._mediator.Publish(@event);
-
+            
+            eventRunning = Task.Run(() => this._mediator.Publish(@event));
+            
             if (@event.ExecutionMode == EventExecutionMode.WaitToClose)
                 await eventRunning;
             else
                 await this.eventStore.Queue(eventRunning);
-            */
         }
         
         public async Task SendCommand(ICommand command)
@@ -59,8 +49,6 @@ namespace ProjectName.Shared.Bus.Core
 
         public void Dispose()
         {
-            this.eventStore.Dispose();
-
             GC.SuppressFinalize(this);
         }
     }

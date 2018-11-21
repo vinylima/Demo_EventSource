@@ -52,7 +52,7 @@ namespace ProjectName.Shared.Infra.Server.Data.EventSourcing
 
         public void Dispose()
         {
-            this._cancellationToken = new CancellationToken(true);
+           // this._cancellationToken = new CancellationToken(true);
             GC.SuppressFinalize(this);
         }
     }

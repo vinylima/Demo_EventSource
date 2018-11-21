@@ -32,7 +32,7 @@ namespace ProjectName.Shared.Infra.IoC
             // Add Event Sourcing
 
             services.AddSingleton<IEventStore, EventStore>();
-            services.AddScoped<IEventStoreRepository, EventStoreRepository>();
+            services.AddSingleton<IEventStoreRepository, EventStoreRepository>();
             
 
             // Add Notification Store of Domain Notifications, Warnings and System Errors.
